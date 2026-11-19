@@ -510,7 +510,7 @@
       }
 
       // Controls
-      const targetSpeed = keys['Shift'] || keys['KeyX'] ? this.runSpeed : this.walkSpeed;
+      const targetSpeed = keys['Shift'] || keys['KeyX'] || keys['KeyK'] ? this.runSpeed : this.walkSpeed;
       if (keys['ArrowLeft'] || keys['KeyA']) {
         this.vx -= this.accel;
         if (this.vx < -targetSpeed) this.vx = -targetSpeed;
@@ -525,7 +525,7 @@
       }
 
       // Jump control (variable height)
-      const wantsJump = keys['ArrowUp'] || keys['KeyW'] || keys['Space'] || keys['KeyZ'];
+      const wantsJump = keys['ArrowUp'] || keys['KeyW'] || keys['Space'] || keys['KeyZ'] || keys['KeyJ'];
       if (wantsJump && this.isGrounded && !this.isJumping) {
         this.vy = this.jumpImpulse;
         this.isGrounded = false;
@@ -988,10 +988,10 @@
       ctx.fillText('SUPER MARIO WEB', CANVAS_WIDTH / 2, 70);
       ctx.fillStyle = '#ffffff';
       ctx.font = '8px monospace';
-      ctx.fillText('PRESS ENTER OR TAP TO START', CANVAS_WIDTH / 2, 110);
+      ctx.fillText('PRESS ENTER, J, OR TAP TO START', CANVAS_WIDTH / 2, 110);
       ctx.fillText('ARROWS/WASD : MOVE', CANVAS_WIDTH / 2, 135);
-      ctx.fillText('SPACE / Z / UP : JUMP', CANVAS_WIDTH / 2, 148);
-      ctx.fillText('SHIFT / X : SPRINT', CANVAS_WIDTH / 2, 161);
+      ctx.fillText('SPACE / J / W / Z : JUMP', CANVAS_WIDTH / 2, 148);
+      ctx.fillText('SHIFT / K / X : SPRINT', CANVAS_WIDTH / 2, 161);
       ctx.fillText('M : MUTE AUDIO', CANVAS_WIDTH / 2, 174);
       ctx.textAlign = 'left';
     } else if (gameState === 'LEVEL_CLEAR') {
@@ -1044,7 +1044,7 @@
         if (muteBtn) muteBtn.innerText = isMuted ? '🔇 Unmute' : '🔊 Sound On';
       }
 
-      if (e.code === 'Enter' || e.code === 'Space') {
+      if (e.code === 'Enter' || e.code === 'Space' || e.code === 'KeyJ' || e.code === 'KeyZ') {
         if (gameState === 'START' || gameState === 'LEVEL_CLEAR' || gameState === 'GAME_OVER') {
           startNewGame();
         }
