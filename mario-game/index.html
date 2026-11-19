@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Super Mario Bros - Web Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    <div class="header-bar">
+      <div class="game-title">★ SUPER MARIO WEB ★</div>
+      <div class="header-actions">
+        <button id="muteBtn" class="retro-btn">🔊 Sound On</button>
+        <button id="restartBtn" class="retro-btn">🔄 Restart</button>
+      </div>
+    </div>
+
+    <!-- Retro Monitor Cabinet -->
+    <div class="cabinet-frame">
+      <div class="screen-container">
+        <canvas id="gameCanvas" width="256" height="224"></canvas>
+        <div class="crt-overlay"></div>
+      </div>
+    </div>
+
+    <!-- On-Screen Virtual Controls for Mobile / Touch -->
+    <div class="touch-controls">
+      <div class="touch-dpad">
+        <button id="btnLeft" class="touch-btn dpad-left">◀</button>
+        <button id="btnDown" class="touch-btn dpad-down">▼</button>
+        <button id="btnRight" class="touch-btn dpad-right">▶</button>
+      </div>
+      <div class="touch-actions">
+        <button id="btnRun" class="touch-btn action-btn btn-b">B<br><span style="font-size:7px">RUN</span></button>
+        <button id="btnJump" class="touch-btn action-btn btn-a">A<br><span style="font-size:7px">JUMP</span></button>
+      </div>
+    </div>
+
+    <!-- Desktop Instructions -->
+    <div class="instructions-panel">
+      <h4>GAMEPLAY CONTROLS</h4>
+      <div><span class="key-badge">◀</span> <span class="key-badge">▶</span> or <span class="key-badge">A</span> <span class="key-badge">D</span> Move Mario</div>
+      <div><span class="key-badge">SPACE</span> / <span class="key-badge">▲</span> / <span class="key-badge">W</span> / <span class="key-badge">Z</span> Jump (Hold longer for higher jump!)</div>
+      <div><span class="key-badge">SHIFT</span> or <span class="key-badge">X</span> Sprint / Run Fast</div>
+      <div><span class="key-badge">ENTER</span> Start / Restart Game &bull; <span class="key-badge">M</span> Toggle 8-bit Audio & Music</div>
+    </div>
+  </div>
+
+  <script src="audio.js"></script>
+  <script src="sprites.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

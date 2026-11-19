@@ -1,0 +1,4 @@
+# Ignore current files and directories in the workspace
+.config/
+sample_data/
+code
