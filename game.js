@@ -966,7 +966,7 @@
     }
 
     // Render pass
-    ctx.fillStyle = '#5c94fc'; // Classic NES sky blue
+    ctx.fillStyle = '#61afff'; // Bright vibrant sky blue
     ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     drawScenery(ctx);
@@ -980,7 +980,7 @@
 
     // Overlay Screens
     if (gameState === 'START') {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.65)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
       ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
       ctx.fillStyle = '#fcb800';
       ctx.font = '12px monospace';
